@@ -1,4 +1,4 @@
-ArrayList Internals
+I.ArrayList Internals:
 
 1. Uses Object[] elementData internally.
 2. Maintains size and capacity separately.
@@ -18,3 +18,118 @@ ArrayList Internals
 13. trimToSize() reduces unused memory.
 14. Iterator is Fail-Fast.
 15. ListIterator supports bidirectional traversal.
+
+
+II.LINKEDLIST INTERNALS:
+
+1. LinkedList is implemented as a Doubly Linked List.
+
+2. Each node contains:
+   - Data (item)
+   - Reference to next node
+   - Reference to previous node
+
+Node Structure:
+
+private static class Node<E> {
+
+    E item;
+    Node<E> next;
+    Node<E> prev;
+}
+
+Example:
+
+null <- Java <-> Spring <-> Hibernate -> null
+
+--------------------------------------------------
+
+Important Fields:
+
+first -> points to first node
+
+last -> points to last node
+
+size -> number of elements
+
+--------------------------------------------------
+
+Advantages:
+
+1. Fast insertion at beginning
+2. Fast deletion at beginning
+3. Fast insertion/deletion at end
+
+--------------------------------------------------
+
+Disadvantages:
+
+1. Slow random access
+2. More memory consumption
+3. Extra references (prev and next)
+
+--------------------------------------------------
+
+Time Complexities
+
+addFirst()      O(1)
+
+addLast()       O(1)
+
+removeFirst()   O(1)
+
+removeLast()    O(1)
+
+getFirst()      O(1)
+
+getLast()       O(1)
+
+get(index)      O(n)
+
+set(index)      O(n)
+
+contains()      O(n)
+
+add(index)      O(n)
+
+remove(index)   O(n)
+
+--------------------------------------------------
+
+Why get(index) is O(n)?
+
+LinkedList does not use an array.
+
+To reach index 5:
+
+Node1 -> Node2 -> Node3 -> Node4 -> Node5
+
+Traversal is required.
+
+--------------------------------------------------
+
+Java Optimization
+
+if(index < size/2)
+
+    Traverse from first
+
+else
+
+    Traverse from last
+
+This reduces traversal time.
+
+--------------------------------------------------
+
+ArrayList vs LinkedList
+
+ArrayList:
+Uses Dynamic Array
+Fast Random Access O(1)
+Slow insertion/deletion at beginning
+
+LinkedList:
+Uses Doubly Linked List
+Slow Random Access O(n)
+Fast insertion/deletion at beginning
