@@ -1,0 +1,20 @@
+ArrayList Internals
+
+1. Uses Object[] elementData internally.
+2. Maintains size and capacity separately.
+3. Default capacity becomes 10 after first insertion.
+4. Growth formula:
+   newCapacity = oldCapacity + (oldCapacity >> 1)
+
+5. add() -> Amortized O(1)
+6. get() -> O(1)
+7. set() -> O(1)
+8. contains() -> O(n)
+9. indexOf() -> O(n)
+10. add(index) -> O(n)
+11. remove(index) -> O(n)
+
+12. ensureCapacity() reduces resizing overhead.
+13. trimToSize() reduces unused memory.
+14. Iterator is Fail-Fast.
+15. ListIterator supports bidirectional traversal.
