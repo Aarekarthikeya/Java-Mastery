@@ -26,5 +26,9 @@ public class ArrayListBasic {
         System.out.println("After remove(): " + list);
 
         System.out.println("Size: " + list.size());
+
+        list.ensureCapacity(100);
+        list.trimToSize();
+
     }
 }
